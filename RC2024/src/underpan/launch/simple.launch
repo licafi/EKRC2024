@@ -1,0 +1,9 @@
+<launch>
+  <!-- roscore first -->
+  <node pkg="underpan" type="underpan_cmd" name="underpan_control"  output="screen">
+    <remap from="underpan_control/cmd_vel" to="/cmd_vel"/>
+  </node>
+ 
+  <node pkg="underpan" type="wt_underpan" name="wheeltec_underpan"  output="screen">
+  </node>
+</launch>

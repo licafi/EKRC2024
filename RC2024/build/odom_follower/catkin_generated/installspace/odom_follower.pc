@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/RC2024new/install
+
+Name: odom_follower
+Description: Description of odom_follower
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

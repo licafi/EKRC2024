@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/RC2024new/devel
+
+Name: line_follower
+Description: Description of line_follower
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

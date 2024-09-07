@@ -1,0 +1,5 @@
+<launch>
+ 
+  <node pkg="line_follower" type="img_pub" name="line_camera_pub" required="true"/>
+  
+</launch>

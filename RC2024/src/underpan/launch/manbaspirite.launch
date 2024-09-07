@@ -1,0 +1,16 @@
+<launch>
+  <!-- roscore first -->
+  <include file="$(find line_follower)/launch/line.launch">
+  </include>
+
+  <node pkg="ball_carry" type="ball_carry.py" name="ball_carry" output="screen">
+  </node>
+
+  <node pkg="underpan" type="manba" name="manba"  output="screen">
+    <remap from="/manba/cmd_GPIO" to="/cmd_GPIO"/>
+    <remap from="/manba/cmd_vel" to="/cmd_vel"/>
+  </node>
+ 
+  <node pkg="underpan" type="wt_underpan" name="wheeltec_underpan"  output="screen">
+  </node>
+</launch>

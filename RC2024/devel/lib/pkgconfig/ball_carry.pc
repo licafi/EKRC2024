@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/RC2024new/devel
+
+Name: ball_carry
+Description: Description of ball_carry
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

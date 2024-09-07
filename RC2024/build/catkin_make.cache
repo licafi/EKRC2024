@@ -1,0 +1,2 @@
+ball_carry:depthcam:line_follower:odom_follower:underpan:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/wheeltec/RC2024new/devel -DCMAKE_INSTALL_PREFIX=/home/wheeltec/RC2024new/install -G Unix Makefiles

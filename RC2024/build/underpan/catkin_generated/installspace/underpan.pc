@@ -1,0 +1,8 @@
+prefix=/home/wheeltec/RC2024new/install
+
+Name: underpan
+Description: Description of underpan
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lunderpan
+Requires: roscpp rospy std_msgs

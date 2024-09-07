@@ -1,0 +1,26 @@
+<launch>
+  <!--打开节点wheeltec_robot，初始化串口等操作-->
+  <arg name="odom_frame_id"  default="odom_combined"/>
+  <arg name="use_FDI_IMU_GNSS" default="false"/>
+ 
+  <node pkg="turn_on_wheeltec_robot" type="wheeltec_robot_node" name="wheeltec_robot" output="screen" respawn="false">
+    <param name="usart_port_name"    type="string" value="/dev/wheeltec_controller"/>  
+    <param name="serial_baud_rate"   type="int"    value="115200"/>
+    <param name="odom_frame_id"      type="string" value="$(arg odom_frame_id)"/> 
+    <param name="robot_frame_id"     type="string" value="base_footprint"/> 
+    <param name="gyro_frame_id"      type="string" value="gyro_link"/> 
+
+    <!-- 如果使用飞迪系的惯导、GNSS/RTK模块，对板载IMU话题进行重命名，避免相关节点订阅板载IMU话题 -->
+    <remap if="$(arg use_FDI_IMU_GNSS)" from="imu" to="imu_on_board"/>
+  </node>
+
+  <!-- 如果使用飞迪系的惯导、GNSS/RTK模块，启动相关launch文件，该节点发布的IMU话题名称就是【/imu】 -->
+  <include if="$(arg use_FDI_IMU_GNSS)" 
+    file="$(find fdilink_ahrs)/launch/ahrs_data.launch" >
+  </include>
+
+
+</launch>
+
+
+

@@ -1,0 +1,63 @@
+// void odomBACK()
+// {
+//     // Target position is the next one in the path
+//     geometry_msgs::Pose target = path.back();
+//     path.pop_back();
+//     ROS_INFO("target: %f, %f", target.position.x, target.position.y);
+//     // Current position
+//     double x = nowOdom[0];
+//     double y = nowOdom[1];
+
+//     // Calculate error
+//     double error_x = target.position.x - x;
+//     double error_y = target.position.y - y;
+
+//     // Calculate integral of error
+//     error_integral_x = error_integral_x + error_x;
+//     error_integral_y = error_integral_y + error_y; 
+
+//     // Calculate derivative of error
+//     double error_derivative_x = error_x - last_error_x;
+//     double error_derivative_y = error_y - last_error_y;
+
+//     // Update last error
+//     last_error_x = error_x;
+//     last_error_y = error_y;
+
+//     // Calculate control signal
+//     geometry_msgs::Twist control;
+//     control.linear.x = Kp * error_x + Ki * error_integral_x + Kd * error_derivative_x;
+//     control.linear.y = Kp * error_y + Ki * error_integral_y + Kd * error_derivative_y;
+//     underpan_control.publish(control);
+//     if (path.size() == 0)
+//     {
+//         control.linear.x = 0;
+//         control.linear.y = 0;
+//         underpan_control.publish(control);
+//     }
+// }
+// void odomBACK()
+// {
+//     geometry_msgs::Pose target = path.back();
+//     geometry_msgs::Twist twist;
+//     path.pop_back();
+
+//     targetOdom[0] = target.position.x;
+//     targetOdom[1] = target.position.y;
+//     targetOdom[2] = target.position.z;
+
+//     ROS_INFO("target: %f, %f, %f", targetOdom[0], targetOdom[1], targetOdom[2]);
+//     twist.angular.z = (errorOdom[2] > 0) ? 0.35 : -0.35; 
+//     twist.linear.x = (errorOdom[0] > 0) ? 0.78 : -0.78;
+//     //odomMoveHorizontal();
+//     // odomMoveStraight();
+//     // odomMoveRotate();
+//     if (path.size() == 0)
+//     {
+//         geometry_msgs::Twist twist;
+//         twist.linear.x = 0;
+//         twist.linear.y = 0;
+//         underpan_control.publish(twist);
+//     }
+//     underpan_control.publish(twist);
+// }

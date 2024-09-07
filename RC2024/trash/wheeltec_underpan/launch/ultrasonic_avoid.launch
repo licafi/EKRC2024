@@ -1,0 +1,32 @@
+<launch>
+        <node pkg="turn_on_wheeltec_robot" type="ultrasonic_avoid" name="ultrasonic_avoid" output="screen">
+            <param name="frame_id" type="string" value="laser_avoid"/>
+            <param name="scan_topic_without_avoid" type="string" value="scan_without_avoid"/>
+            <param name="scan_topic" type="string" value="scan"/>
+            <param name="avoid_distance"  type="double" value="0.8"/>
+
+            <param name="scan_A_angle"  type="double" value="90"/>
+            <param name="scan_B_angle"  type="double" value="30"/>
+            <param name="scan_C_angle"  type="double" value="330"/>
+            <param name="scan_D_angle"  type="double" value="270"/>
+
+            <param name="avoid_A_xoffset" type="double" value="0.12"/>
+            <param name="avoid_B_xoffset" type="double" value="0.2"/>
+            <param name="avoid_C_xoffset" type="double" value="0.2"/>
+            <param name="avoid_D_xoffset" type="double" value="0.12"/>
+
+            <param name="avoid_A_yoffset" type="double" value="0.16"/>
+            <param name="avoid_B_yoffset" type="double" value="0.10"/>
+            <param name="avoid_C_yoffset" type="double" value="-0.10"/>
+            <param name="avoid_D_yoffset" type="double" value="-0.16"/>
+
+            
+            <param name="avoid_A_rotate" type="double" value="0.0"/>
+            <param name="avoid_B_rotate" type="double" value="0.0"/>
+            <param name="avoid_C_rotate" type="double" value="0.0"/>
+            <param name="avoid_D_rotate" type="double" value="0.0"/>
+
+        </node>
+
+
+</launch>

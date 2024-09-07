@@ -1,0 +1,14 @@
+<launch>
+  <!-- 运行 realsense2_camera 的 launch 文件 -->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="align_depth" value="true"/>
+    <arg name="color_width" value="640"/>
+    <arg name="color_height" value="480"/>
+    <arg name="depth_width" value="640"/>
+    <arg name="depth_height" value="480"/>
+  </include>
+
+  <!-- 运行 darknet_ros 的 launch 文件 -->
+  <include file="$(find darknet_ros)/launch/darknet_ros.launch"/>
+  <!-- </include> -->
+</launch>
